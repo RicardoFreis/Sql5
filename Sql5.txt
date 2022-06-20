@@ -1,0 +1,20 @@
+SELECT
+ CASE
+  WHEN Valor < 70 THEN Null
+  ELSE Nome
+ END AS Nome,
+ CASE
+ WHEN Valor >= 0 and Valor <= 9 THEN 1
+ WHEN Valor > 9 and Valor <= 19 THEN 2
+ WHEN Valor > 19 and Valor <= 29 THEN 3
+ WHEN Valor > 29 and Valor <= 39 THEN 4
+ WHEN Valor > 39 and Valor <= 49 THEN 5
+ WHEN Valor > 49 and Valor <= 59 THEN 6
+ WHEN Valor > 59 and Valor <= 69 THEN 7
+ WHEN Valor > 69 and Valor <= 79 THEN 8
+ WHEN Valor > 79 and Valor <= 89 THEN 9
+  ELSE 10
+ END AS SuaNota, 
+ Valor
+ FROM Alunos
+ order by SuaNota desc, Nome desc;
